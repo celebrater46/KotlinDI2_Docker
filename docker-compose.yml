@@ -1,0 +1,14 @@
+version: "2"
+services:
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  manage:
+#    image: kotdev_base
+#    hostname: kotdev-manage
+    image: kotdev_base
+    hostname: kotlin_lessons
+    ports:
+      - "2122:22"
+    command: /usr/sbin/sshd -D
